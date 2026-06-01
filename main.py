@@ -1,17 +1,11 @@
-import ollama
+from agent.core import Agent
 
-response = ollama.chat(
-    model='qwen2.5:1.5b',
-    messages=[
-        {
-            'role': 'system',
-            'content': 'You are a cybersecurity AI assistant.'
-        },
-        {
-            'role': 'user',
-            'content': 'Explain TCP briefly'
-        }
-    ]
-)
+agent = Agent()
 
-print(response['message']['content'])
+while True:
+    prompt = input("> ")
+
+    if prompt.lower() in ["exit", "quit"]:
+        break
+
+    print(agent.ask(prompt))
