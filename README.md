@@ -193,9 +193,12 @@ The project is intended as:
 
 ## v0.2
 
-* [ ] Conversation memory
-* [ ] Better CLI
+- [x] Interactive chat
+- [x] Conversation memory
+- [x] Agent class
+- [x] Conversation reset
 
+## TODO
 ## v0.3
 
 * [ ] Structured JSON outputs
