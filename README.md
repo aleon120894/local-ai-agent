@@ -201,12 +201,15 @@ The project is intended as:
 ## TODO
 ## v0.3
 
-* [ ] Structured JSON outputs
-* [ ] Validation
+* [x] Tools package
+* [x] File tool
+* [x] Tool registry
 
 ## v0.4
 
 * [ ] Tool calling
+* [ ] Structured JSON outputs
+* [ ] Validation
 
 ## v0.5
 
