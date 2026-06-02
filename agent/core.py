@@ -1,11 +1,18 @@
 import ollama
 
+
+SYSTEM_PROMPT = """
+You are a cybersecurity AI assistant.
+"""
+
 class Agent:
     def __init__(self):
+
+        self.model = "qwen2.5:1.5b"
         self.messages = [
             {
                 "role": "system",
-                "content": "You are a cybersecurity AI assistant."
+                "content": SYSTEM_PROMPT
             }
         ]
 
@@ -18,7 +25,7 @@ class Agent:
         )
 
         response = ollama.chat(
-            model="qwen2.5:1.5b",
+            model=self.model,
             messages=self.messages
         )
 
@@ -27,8 +34,17 @@ class Agent:
         self.messages.append(
             {
                 "role": "assistant",
-                "content": answer
+                "content": prompt
             }
         )
 
         return answer
+
+    def reset(self):
+
+        self.messages = [
+            {
+                "role": "system",
+                "content": SYSTEM_PROMPT
+            }
+        ]
