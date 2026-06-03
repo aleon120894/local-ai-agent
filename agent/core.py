@@ -1,4 +1,9 @@
 import ollama
+import json
+
+from agent.schemas import AgentAction
+from agent.tool_executor import execute_action
+
 
 class Agent:
     def __init__(self):
@@ -25,14 +30,22 @@ class Agent:
             messages=self.messages
         )
 
-        answer = response["message"]["content"]
+        raw_response = response["message"]["content"]
+        print(raw_response)
 
-        self.messages.append({
-            "role": "assistant",
-            "content": answer
-        })
+        try:
+            raw_response = raw_response.strip()
+            data = json.loads(raw_response)
+            action = AgentAction.model_validate(data)
 
-        return answer
+            if action.action == "respond":
+                return action.content
+
+            return execute_action(action)
+
+        except Exception as e:
+
+            return f"JSON error: {e}"
 
     def reset(self):
         self.messages = []

@@ -198,7 +198,6 @@ The project is intended as:
 - [x] Agent class
 - [x] Conversation reset
 
-## TODO
 ## v0.3
 
 * [x] Tools package
@@ -207,9 +206,11 @@ The project is intended as:
 
 ## v0.4
 
-* [ ] Tool calling
-* [ ] Structured JSON outputs
-* [ ] Validation
+* [x] Tool calling
+* [x] Structured JSON outputs
+* [x] Validation
+
+## TODO
 
 ## v0.5
 
