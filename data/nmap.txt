@@ -1,0 +1,2 @@
+Nmap is a network scanning tool used in cybersecurity.
+It can discover hosts, open ports, services, and operating systems.

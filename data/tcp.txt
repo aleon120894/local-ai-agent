@@ -1,0 +1,2 @@
+TCP (Transmission Control Protocol) is a reliable transport layer protocol.
+It provides ordered delivery, retransmission of lost packets, and flow control.

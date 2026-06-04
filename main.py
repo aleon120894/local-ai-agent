@@ -1,6 +1,9 @@
 from agent.core import Agent
 from tools.registry import TOOLS
+from rag.indexer import build_index
 
+
+build_index()
 agent = Agent()
 
 while True:
