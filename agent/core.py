@@ -1,8 +1,8 @@
 import ollama
-import json
 
 from agent.schemas import AgentAction
 from agent.tool_executor import execute_action
+from agent.parser import extract_json
 
 
 class Agent:
@@ -31,11 +31,15 @@ class Agent:
         )
 
         raw_response = response["message"]["content"]
-        print(raw_response)
+        # DEBUG = False
+        #
+        # if DEBUG:
+        #     print(raw_response)
 
         try:
+
             raw_response = raw_response.strip()
-            data = json.loads(raw_response)
+            data = extract_json(raw_response)
             action = AgentAction.model_validate(data)
 
             if action.action == "respond":
@@ -48,4 +52,13 @@ class Agent:
             return f"JSON error: {e}"
 
     def reset(self):
-        self.messages = []
+        
+        with open("prompts/system_prompt.txt", "r") as f:
+            system_prompt = f.read()
+
+        self.messages = [
+            {
+                "role": "system",
+                "content": system_prompt
+            }
+        ]
