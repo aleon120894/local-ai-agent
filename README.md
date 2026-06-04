@@ -215,8 +215,6 @@ The project is intended as:
 
 ## v0.5
 
-## v0.5
-
 * [x] Vector database (FAISS)
 * [x] Embedding pipeline
 * [x] Retrieval layer (search_docs tool)
