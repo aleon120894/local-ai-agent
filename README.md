@@ -209,6 +209,7 @@ The project is intended as:
 * [x] Tool calling
 * [x] Structured JSON outputs
 * [x] Validation
+* [x] JSON parser
 
 ## TODO
 
