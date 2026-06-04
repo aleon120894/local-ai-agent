@@ -1,17 +1,15 @@
 import json
-import re
 
-
-def extract_json(text: str) -> dict:
-
+def safe_parse(text: str):
     text = text.strip()
 
-    text = text.replace("```json", "")
-    text = text.replace("```", "")
+    start = text.find("{")
+    end = text.rfind("}")
 
-    match = re.search(r"\{.*\}", text, re.DOTALL)
+    if start == -1 or end == -1:
+        return None
 
-    if not match:
-        raise ValueError("No JSON found")
-
-    return json.loads(match.group(0))
+    try:
+        return json.loads(text[start:end+1])
+    except Exception:
+        return None

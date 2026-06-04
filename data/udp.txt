@@ -1,0 +1,2 @@
+UDP (User Datagram Protocol) is a connectionless transport protocol.
+It provides low-latency communication but does not guarantee delivery.
