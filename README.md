@@ -211,6 +211,7 @@ The project is intended as:
 * [x] Validation
 * [x] JSON parser
 
+
 ## v0.5
 
 * [x] Vector database (FAISS)
