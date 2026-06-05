@@ -33,7 +33,8 @@ class Agent:
         data = safe_parse(raw)
 
         if data is None:
-            return "Model returned invalid format"
+            # fallback: treat as direct answer
+            return raw
 
         # 2. SAFE VALIDATION (no crash)
         try:

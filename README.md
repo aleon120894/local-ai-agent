@@ -157,7 +157,7 @@ Alternative lightweight models:
 # Run the project
 
 ```bash
-python main.py
+python cli.py
 ```
 
 ---
@@ -211,10 +211,6 @@ The project is intended as:
 * [x] Validation
 * [x] JSON parser
 
-## TODO
-
-## v0.5
-
 ## v0.5
 
 * [x] Vector database (FAISS)
@@ -222,11 +218,11 @@ The project is intended as:
 * [x] Retrieval layer (search_docs tool)
 * [⚠] RAG integration (basic, not fully stable in agent loop)
 
-
 ## v0.6
 
-* [ ] FastAPI backend
+* [x] FastAPI backend
 
+## TODO
 ## v0.7
 
 * [ ] Web UI
