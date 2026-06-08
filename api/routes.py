@@ -1,17 +1,18 @@
 from fastapi import APIRouter
 
 from api.schemas import ChatRequest, ChatResponse
-from agent.core import Agent
+from services.agent_service import AgentService
+
 
 router = APIRouter()
 
-agent = Agent()
+service = AgentService()
 
 
 @router.post("/chat", response_model=ChatResponse)
 def chat(request: ChatRequest):
 
-    response = agent.ask(request.message)
+    response = service.chat(request.message)
 
     return ChatResponse(
         response=response

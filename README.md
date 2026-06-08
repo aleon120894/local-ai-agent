@@ -226,7 +226,10 @@ The project is intended as:
 ## TODO
 ## v0.7
 
-* [ ] Web UI
+* [ ] React UI
+* [ ] Chat page
+* [ ] Connect to FastAPI
+* [ ] Display chat history
 
 ## v1.0
 
