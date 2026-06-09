@@ -230,6 +230,8 @@ The project is intended as:
 * [x] Chat page
 * [x] Connect to FastAPI
 * [ ] Display chat history
+* [x] Loading indicator
+* [ ] UI improvements
 
 ## v1.0
 
