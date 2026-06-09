@@ -227,8 +227,8 @@ The project is intended as:
 ## v0.7
 
 * [x] React UI
-* [ ] Chat page
-* [ ] Connect to FastAPI
+* [x] Chat page
+* [x] Connect to FastAPI
 * [ ] Display chat history
 
 ## v1.0
