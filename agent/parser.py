@@ -1,6 +1,7 @@
 import json
 
 def safe_parse(text: str):
+
     text = text.strip()
 
     start = text.find("{")
