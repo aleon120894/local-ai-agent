@@ -154,7 +154,7 @@ Alternative lightweight models:
 
 ---
 
-# Run the project
+# Run CLI
 
 ```bash
 python cli.py
