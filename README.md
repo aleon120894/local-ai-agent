@@ -242,7 +242,7 @@ The project is intended as:
 * [x] React UI
 * [x] Chat page
 * [x] Connect to FastAPI
-* [ ] Display chat history
+* [x] Display chat history
 * [x] Loading indicator
 * [ ] UI improvements
 

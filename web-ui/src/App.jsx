@@ -3,10 +3,21 @@ import { useState } from "react";
 
 function App() {
   const [message, setMessage] = useState("");
-  const [response, setResponse] = useState("");
+  const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const sendMessage = async () => {
+
+    if (!message.trim()) {
+      return;
+    }
+
+    setMessages((prev) => [ 
+      ...prev, 
+      { role: "user", 
+        content: message,
+       },
+     ]);
     setLoading(true);
 
     try {
@@ -22,7 +33,15 @@ function App() {
 
       const data = await result.json();
 
-      setResponse(data.response);
+      setMessages((prev) => [ 
+        ...prev, 
+        { 
+          role: "assistant", 
+          content: data.response,
+         }, 
+        ]);
+
+      setMessage("");
 
     } finally {
       setLoading(false);
@@ -48,11 +67,13 @@ function App() {
 
       <h3>Response:</h3>
 
-      {loading ? (
-        <p>Thinking...</p>
-      ) : (
-      <p>{response}</p>
-    )}
+      {messages.map((msg, index) => ( 
+        <div key={index}> 
+        <strong>{msg.role}:</strong> {msg.content} 
+        </div> 
+      ))}
+
+      {loading && <p>Thinking...</p>}
     </div>
   );
 }

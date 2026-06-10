@@ -12,5 +12,6 @@ def safe_parse(text: str):
 
     try:
         return json.loads(text[start:end+1])
+
     except Exception:
         return None
