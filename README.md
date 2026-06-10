@@ -160,6 +160,19 @@ Alternative lightweight models:
 python cli.py
 ```
 
+# Run Back-End server
+
+```bash
+uvicorn main:app --reload
+```
+
+# Run Front-End
+
+```bash
+cd web-ui
+npm run dev
+```
+
 ---
 
 # Example

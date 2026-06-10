@@ -6,6 +6,7 @@ from agent.tool_executor import execute_action
 
 
 class Agent:
+
     def __init__(self):
         self.model = "qwen2.5:1.5b"
 
@@ -17,6 +18,7 @@ class Agent:
         ]
 
     def ask(self, prompt: str):
+
         self.messages.append({
             "role": "user",
             "content": prompt
