@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./App.css";
 
 
 function App() {
@@ -49,29 +50,35 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="app">
       <h1>Local AI Agent</h1>
 
-      <input
-        type="text"
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        placeholder="Ask something..."
-      />
-
-      <button onClick={sendMessage}>
-        Send
-      </button>
+      <div className="input-area">
+        <input
+          type="text"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder="Ask something..."
+        />
+        <button onClick={sendMessage}>
+          Send
+        </button>
+      </div>
 
       <hr />
 
-      <h3>Response:</h3>
-
-      {messages.map((msg, index) => ( 
-        <div key={index}> 
-        <strong>{msg.role}:</strong> {msg.content} 
-        </div> 
+      <div className="chat">
+        {messages.map((msg, index) => (
+        <div
+          key={index}
+          className={`message ${msg.role}`}
+          >
+        <strong>{msg.role}:</strong> {msg.content}
+      </div>
       ))}
+
+  {loading && <p>Thinking...</p>}
+</div>
 
       {loading && <p>Thinking...</p>}
     </div>

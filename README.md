@@ -244,7 +244,7 @@ The project is intended as:
 * [x] Connect to FastAPI
 * [x] Display chat history
 * [x] Loading indicator
-* [ ] UI improvements
+* [x] UI improvements
 
 ## v1.0
 
