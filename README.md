@@ -236,7 +236,6 @@ The project is intended as:
 
 * [x] FastAPI backend
 
-## TODO
 ## v0.7
 
 * [x] React UI
@@ -245,6 +244,28 @@ The project is intended as:
 * [x] Display chat history
 * [x] Loading indicator
 * [x] UI improvements
+
+## TODO
+## v0.8
+
+### Memory
+* [x] Persistent memory
+* [x] Save conversations
+* [x] Load conversations
+
+### Knowledge Base
+* [ ] Auto-index documents
+* [ ] Knowledge base management
+* [ ] Rebuild index command
+
+### Pentest Features
+* [ ] Nmap output analyzer
+* [ ] Pentest RAG dataset
+* [ ] Enumeration recommendations
+
+### UI
+* [ ] Upload file button
+* [ ] Display uploaded files
 
 ## v1.0
 
