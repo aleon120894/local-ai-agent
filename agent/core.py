@@ -4,6 +4,8 @@ from agent.parser import safe_parse
 from agent.schemas import AgentAction
 from agent.tool_executor import execute_action
 
+from memory.memory_manager import save, load
+
 
 class Agent:
 
@@ -13,9 +15,18 @@ class Agent:
         with open("prompts/system_prompt.txt", "r") as f:
             system_prompt = f.read()
 
-        self.messages = [
-            {"role": "system", "content": system_prompt}
-        ]
+        saved_messages = load()
+
+        if saved_messages:
+            self.messages = saved_messages
+
+        else:
+            self.messages = [
+                {"role": "system", "content": system_prompt}
+            ]
+
+        print(f"Loaded {len(self.messages)} messages")
+
 
     def ask(self, prompt: str):
 
@@ -35,7 +46,15 @@ class Agent:
         data = safe_parse(raw)
 
         if data is None:
+
             # fallback: treat as direct answer
+            self.messages.append({
+                "role": "assistant",
+                "content": raw
+            })
+
+            save(self.messages)
+
             return raw
 
         # 2. SAFE VALIDATION (no crash)
@@ -46,7 +65,16 @@ class Agent:
 
         # 3. TOOL EXECUTION LAYER
         if action.action == "search_docs":
-            return execute_action(action)
+            content = action.content or "Empty response"
+
+            self.messages.append({
+                "role": "assistant",
+                "content": content
+            })
+
+            save(self.messages)
+
+            return content
 
         if action.action == "read_file":
             return execute_action(action)
@@ -63,3 +91,5 @@ class Agent:
         self.messages = [
             {"role": "system", "content": system_prompt}
         ]
+
+        save(self.messages)
