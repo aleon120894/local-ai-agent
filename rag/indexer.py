@@ -2,25 +2,25 @@ from rag.embedder import embed
 from rag.vector_store import VectorStore
 from rag.retriever import init_store
 
+import os
+
 
 def build_index():
 
-    tcp = "TCP is a reliable transport protocol."
-    udp = "UDP is a connectionless protocol."
-
-    dimension = len(embed(tcp))
-
+    files = os.listdir("data")
+    dimension = len(embed("test"))
     store = VectorStore(dimension)
 
-    store.add(
-        embed(tcp),
-        tcp
-    )
+    for filename in files:
+        path = os.path.join("data", filename)
 
-    store.add(
-        embed(udp),
-        udp
-    )
+        with open(path, "r") as f:
+            content = f.read()
+
+        store.add(
+            embed(content),
+            content
+        )
 
     init_store(store)
 
