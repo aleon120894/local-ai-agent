@@ -255,8 +255,8 @@ The project is intended as:
 
 ### Knowledge Base
 * [ ] Auto-index documents
-* [ ] Knowledge base management
-* [ ] Rebuild index command
+* [x] Knowledge base management
+* [x] Rebuild index command
 
 ### Pentest Features
 * [ ] Nmap output analyzer
