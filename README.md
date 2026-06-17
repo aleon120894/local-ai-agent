@@ -254,7 +254,7 @@ The project is intended as:
 * [x] Load conversations
 
 ### Knowledge Base
-* [ ] Auto-index documents
+* [x] Auto-index documents
 * [x] Knowledge base management
 * [x] Rebuild index command
 
