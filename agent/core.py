@@ -65,16 +65,16 @@ class Agent:
 
         # 3. TOOL EXECUTION LAYER
         if action.action == "search_docs":
-            content = action.content or "Empty response"
+            result = execute_action(action)
 
             self.messages.append({
                 "role": "assistant",
-                "content": content
+                "content": str(result)
             })
 
             save(self.messages)
 
-            return content
+            return result
 
         if action.action == "read_file":
             return execute_action(action)
