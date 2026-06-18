@@ -2,6 +2,8 @@ from agent.core import Agent
 from tools.registry import TOOLS
 from rag.indexer import build_index
 
+from rag.retriever import search
+
 import os
 
 
@@ -11,6 +13,11 @@ agent = Agent()
 while True:
 
     prompt = input("> ")
+
+    if prompt.startswith("/search "):
+        query = prompt.replace("/search ", "")
+        print(search(query))
+        continue
 
     if prompt.lower() == "reset":
         agent.reset()

@@ -16,4 +16,4 @@ def search(query: str) -> list[str]:
 
     query_embedding = embed(query)
 
-    return store.search(query_embedding, k=3)
+    return store.search(query_embedding, k=1)
