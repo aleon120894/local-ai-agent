@@ -48,8 +48,32 @@ local-ai-agent/
 │
 ├── agent/
 │   ├── core.py
-│   ├── planner.py
-│   └── memory.py
+│   ├── parser.py
+│   └── schemas.py
+│   └── tool_executor.py
+│
+├── api/
+│   ├── routes.py
+│   ├── schemas.py
+│
+├── data/
+│   ├── linux.txt
+│   ├── nmap.txt
+│   └── tcp.txt
+│   └── udp.txt
+│
+├── memory/
+│   ├── conversations.json
+│   ├── memory_manager.py
+│
+├── prompts/
+│   └── system_prompt.txt
+│
+├── rag/
+│   ├── embedder.py
+│   ├── indexer.py
+│   └── retriever.py
+│   └── vector_store.py
 │
 ├── tools/
 │   ├── log_tools.py
