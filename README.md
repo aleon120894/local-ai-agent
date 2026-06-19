@@ -284,7 +284,7 @@ The project is intended as:
 
 ### Pentest Features
 * [ ] Nmap output analyzer
-* [ ] Pentest RAG dataset
+* [x] Pentest RAG dataset
 * [ ] Enumeration recommendations
 
 ### UI

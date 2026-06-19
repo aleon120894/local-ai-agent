@@ -1,0 +1,11 @@
+SSH Enumeration
+
+Common commands:
+
+nmap -sV -p22 <target>
+
+ssh user@target
+
+hydra -L users.txt -P passwords.txt ssh://target
+
+banner grabbing

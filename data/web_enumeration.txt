@@ -1,0 +1,13 @@
+Web Enumeration
+
+Common commands:
+
+whatweb http://target
+
+gobuster dir -u http://target -w wordlist.txt
+
+feroxbuster -u http://target
+
+nikto -h http://target
+
+ffuf -u http://target/FUZZ -w wordlist.txt

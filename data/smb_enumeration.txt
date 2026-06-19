@@ -1,0 +1,13 @@
+SMB Enumeration
+
+Common commands:
+
+smbclient -L //<target> -N
+
+enum4linux -a <target>
+
+enum4linux-ng -A <target>
+
+smbmap -H <target>
+
+crackmapexec smb <target>
