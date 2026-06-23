@@ -5,7 +5,6 @@ from services.agent_service import AgentService
 
 
 router = APIRouter()
-
 service = AgentService()
 
 

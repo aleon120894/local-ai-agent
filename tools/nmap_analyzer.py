@@ -1,5 +1,6 @@
 import re
 
+
 SERVICE_MAP = {
     21: "FTP",
     22: "SSH",

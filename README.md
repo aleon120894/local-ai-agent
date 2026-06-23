@@ -21,16 +21,16 @@ Current features:
 * Local LLM integration with Ollama
 * Simple chatbot interface
 * Python-based architecture
+* Conversation memory
+* Structured JSON outputs
+* FastAPI backend
+* Web UI
 
 Planned features:
 
-* Conversation memory
-* Structured JSON outputs
 * Tool calling
 * Local RAG pipeline
 * Vector database integration
-* FastAPI backend
-* Web UI
 * AI security experiments
 * OSINT integrations
 
@@ -61,6 +61,9 @@ local-ai-agent/
 │   ├── nmap.txt
 │   └── tcp.txt
 │   └── udp.txt
+│   └── smb_enumeration.txt
+│   └── web_enumeration.txt
+│   └── ssh_enumeration.txt
 │
 ├── memory/
 │   ├── conversations.json
@@ -84,9 +87,10 @@ local-ai-agent/
 │   └── system_prompt.txt
 │
 ├── rag/
-│   ├── embeddings.py
+│   ├── embedder.py
 │   ├── vector_store.py
-│   └── ingest.py
+│   └── indexer.py
+│   └── retriever.py
 │
 ├── memory/
 │
@@ -286,11 +290,12 @@ The project is intended as:
 * [ ] Nmap output analyzer
 * [x] Pentest RAG dataset
 * [ ] Enumeration recommendations
+* 
 * ### Pentest Dataset
 * [x] linux_priv_esc.txt
-* [ ] smb_enumeration.txt
-* [ ] web_enumeration.txt
-* [ ] ssh_enumeration.txt
+* [x] smb_enumeration.txt
+* [x] web_enumeration.txt
+* [x] ssh_enumeration.txt
 
 ### Pentest Features
 [ ] Nmap parser
