@@ -286,6 +286,17 @@ The project is intended as:
 * [ ] Nmap output analyzer
 * [x] Pentest RAG dataset
 * [ ] Enumeration recommendations
+* ### Pentest Dataset
+* [x] linux_priv_esc.txt
+* [ ] smb_enumeration.txt
+* [ ] web_enumeration.txt
+* [ ] ssh_enumeration.txt
+
+### Pentest Features
+[ ] Nmap parser
+[ ] Service detection
+[ ] Enumeration recommendations
+[ ] Nmap output analyzer
 
 ### UI
 * [ ] Upload file button

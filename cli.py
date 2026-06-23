@@ -1,5 +1,6 @@
 from agent.core import Agent
 from tools.registry import TOOLS
+from tools.nmap_analyzer import analyze
 from rag.indexer import build_index
 
 from rag.retriever import search
@@ -42,6 +43,14 @@ while True:
         path = prompt.replace("/read ", "")
         result = TOOLS["read_file"](path)
         print(result)
+        continue
+
+    if prompt.startswith("/analyze "):
+        path = prompt.split(maxsplit=1)[1]
+        result = analyze(path)
+
+        print(result)
+
         continue
 
     if prompt.lower() in ["exit", "quit"]:
