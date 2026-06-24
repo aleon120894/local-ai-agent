@@ -51,7 +51,15 @@ while True:
         services = analyze(path)
         recommendations = recommend(services)
 
-        print(recommendations)
+        for item in recommendations:
+            print(f"\n{item['service']} ({item['port']})")
+            print("-" * 20)
+
+            print("Recommended enumeration:")
+
+            for rec in item["recommendations"]:
+                print(f"- {rec}")
+
         continue
 
     if prompt.lower() in ["exit", "quit"]:

@@ -301,7 +301,7 @@ The project is intended as:
 [x] Nmap parser
 [x] Service detection
 [x] Enumeration recommendations
-[ ] Nmap output analyzer
+[x] Nmap output analyzer
 
 ### UI
 * [ ] Upload file button
