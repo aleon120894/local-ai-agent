@@ -73,7 +73,6 @@ def analyze(path):
 
         return detected_services
 
-
 def recommend(services):
 
     output = []
