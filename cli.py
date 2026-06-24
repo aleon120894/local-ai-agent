@@ -1,6 +1,6 @@
 from agent.core import Agent
 from tools.registry import TOOLS
-from tools.nmap_analyzer import analyze
+from tools.nmap_analyzer import analyze, recommend
 from rag.indexer import build_index
 
 from rag.retriever import search
@@ -46,11 +46,12 @@ while True:
         continue
 
     if prompt.startswith("/analyze "):
-        path = prompt.split(maxsplit=1)[1]
-        result = analyze(path)
 
-        print(result)
+        path = prompt.replace("/analyze ", "")
+        services = analyze(path)
+        recommendations = recommend(services)
 
+        print(recommendations)
         continue
 
     if prompt.lower() in ["exit", "quit"]:
