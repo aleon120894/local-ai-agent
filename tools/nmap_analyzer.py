@@ -17,6 +17,36 @@ SERVICE_MAP = {
     3389: "RDP",
 }
 
+RECOMMENDATIONS = {
+    "FTP": [
+        "Check anonymous login",
+        "nmap --script ftp-*",
+        "Hydra password audit"
+    ],
+
+    "SSH": [
+        "nmap -sV -p22",
+        "Banner grabbing",
+        "Check valid credentials",
+        "Hydra password audit"
+    ],
+
+    "HTTP": [
+        "whatweb",
+        "gobuster",
+        "feroxbuster",
+        "nikto",
+        "ffuf"
+    ],
+
+    "SMB": [
+        "smbclient",
+        "enum4linux",
+        "smbmap",
+        "crackmapexec"
+    ]
+}
+
 def analyze(path):
     detected_services = []
 
@@ -42,3 +72,20 @@ def analyze(path):
                 )
 
         return detected_services
+
+
+def recommend(services):
+
+    output = []
+
+    for service in services:
+
+        name = service["service"]
+
+        output.append({
+            "service": name,
+            "port": service["port"],
+            "recommendations": RECOMMENDATIONS.get(name, [])
+        })
+
+    return output

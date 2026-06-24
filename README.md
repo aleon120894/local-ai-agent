@@ -287,9 +287,9 @@ The project is intended as:
 * [x] Rebuild index command
 
 ### Pentest Features
-* [ ] Nmap output analyzer
+* [x] Nmap output analyzer
 * [x] Pentest RAG dataset
-* [ ] Enumeration recommendations
+* [x] Enumeration recommendations
 * 
 * ### Pentest Dataset
 * [x] linux_priv_esc.txt
@@ -298,9 +298,9 @@ The project is intended as:
 * [x] ssh_enumeration.txt
 
 ### Pentest Features
-[ ] Nmap parser
-[ ] Service detection
-[ ] Enumeration recommendations
+[x] Nmap parser
+[x] Service detection
+[x] Enumeration recommendations
 [ ] Nmap output analyzer
 
 ### UI
