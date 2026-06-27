@@ -304,12 +304,12 @@ The project is intended as:
 [x] Nmap output analyzer
 
 ### UI
-* [ ] Upload file button
-* [ ] Display uploaded files
+* [x] Upload file button
+* [x] Display uploaded files
 
 ## v1.0
 
-* [ ] Local AI security assistant
+* [x] Local AI security assistant
 
 ---
 

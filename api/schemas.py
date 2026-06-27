@@ -7,3 +7,7 @@ class ChatRequest(BaseModel):
 
 class ChatResponse(BaseModel):
     response: str
+
+
+class FilesResponse(BaseModel):
+    files: list[str]
