@@ -3,9 +3,28 @@ import "./App.css";
 
 
 function App() {
+
   const [message, setMessage] = useState("");
+  const [files, setFiles] = useState([]);
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  const handleUpload = async (event) => {
+
+    const file = event.target.files[0];
+
+    if (!file) return;
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    await fetch("http://127.0.0.1:8000/upload", {
+      method: "POST",
+      body: formData,
+    });
+
+  setFiles((prev) => [...prev, file.name]);
+};
 
   const sendMessage = async () => {
 
@@ -52,6 +71,15 @@ function App() {
   return (
     <div className="app">
       <h1>Local AI Agent</h1>
+      <h3>Knowledge Base</h3>
+
+      <ul className="files">
+        {files.map((file, index) => (
+        <li key={index}>
+          📄 {file}
+        </li>
+  ))}
+</ul>
 
       <div className="input-area">
         <input
@@ -63,6 +91,15 @@ function App() {
         <button onClick={sendMessage}>
           Send
         </button>
+
+        <label className="upload-button">
+          📎 Upload
+        <input
+          type="file"
+          hidden
+          onChange={handleUpload}
+        />
+</label>
       </div>
 
       <hr />
